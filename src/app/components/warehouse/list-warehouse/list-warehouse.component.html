@@ -1,0 +1,25 @@
+<div class="container">
+    <h3>Warehouse List</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Location</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let warehouse of warehouses">
+          <td>{{ warehouse.id }}</td>
+          <td>{{ warehouse.name }}</td>
+          <td>{{ warehouse.location }}</td>
+          <td>
+            <button class="btn btn-warning btn-sm" [routerLink]="['/warehouse/edit', warehouse.id]">Edit</button>
+            <button class="btn btn-danger btn-sm" (click)="deleteWarehouse(warehouse.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
