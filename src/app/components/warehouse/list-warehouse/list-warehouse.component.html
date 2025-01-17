@@ -1,5 +1,7 @@
 <div class="container">
     <h3>Warehouse List</h3>
+    <button class="btn btn-primary tn-sm" [routerLink]="['/warehouse/add']">Add New</button>
+
     <table class="table">
       <thead>
         <tr>
@@ -13,7 +15,7 @@
         <tr *ngFor="let warehouse of warehouses">
           <td>{{ warehouse.id }}</td>
           <td>{{ warehouse.name }}</td>
-          <td>{{ warehouse.location }}</td>
+          <td>{{ warehouse.location }}</td> 
           <td>
             <button class="btn btn-warning btn-sm" [routerLink]="['/warehouse/edit', warehouse.id]">Edit</button>
             <button class="btn btn-danger btn-sm" (click)="deleteWarehouse(warehouse.id)">Delete</button>
