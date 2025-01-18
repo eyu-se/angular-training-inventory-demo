@@ -1,27 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { WarehouseService } from '../../../services/warehouse.service';
-import { Warehouse } from '../../../models/warehouse.model';
 @Component({
   selector: 'app-list-warehouse',
   templateUrl: './list-warehouse.component.html',
   styleUrls: ['./list-warehouse.component.css']
 })
 export class ListWarehouseComponent implements OnInit {
-  warehouses: Warehouse[] = [];
-  warehouse!: Warehouse;
-
-  constructor(private warehouseService: WarehouseService) {
-  }
-
+  warehouses: any[] = [];
+  constructor() {}
   ngOnInit(): void {
     this.loadWarehouses();
   }
   loadWarehouses(): void {
-    this.warehouses = this.warehouseService.getWarehouses();
+    this.warehouses = [{ id: 100, name: 'Main Warehouse', location: 'Addis Ababa' } , { id: 101, name: 'East Gate Warehouse', location: 'Dukem ' } ]
   }
-  deleteWarehouse(id: number) {
-    this.warehouseService.deleteWarehouse(id);
-    this.loadWarehouses();
+  deleteWarehouse(id: number): void {
+    let i = this.warehouses.findIndex(warehouse => warehouse.id == id);
+    this.warehouses.splice(i, 1);
   }
-
 }
