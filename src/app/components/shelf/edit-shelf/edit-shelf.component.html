@@ -1,1 +1,17 @@
-<p>edit-shelf works!</p>
+<div class="container">
+    <h3>Edit shelf</h3>
+    <form (ngSubmit)="updateShelf()">
+      <div class="form-group">
+        <label for="name">Shelf Name</label>
+        <input type="text" class="form-control" id="name" [(ngModel)]="shelf.name" name="name" required />
+      </div>
+      <div class="form-group">
+        <label for="location">Warehouse Id</label>
+        <input type="text" class="form-control" id="warehouseId" [(ngModel)]="shelf.warehouseId" name="warehouseId" required />
+      </div>
+      <button type="submit" class="btn btn-primary">Update</button>
+      <button class="btn btn-primary tn-sm" [routerLink]="['/shelf/list']">Back</button>
+
+    </form>
+  </div>
+  
