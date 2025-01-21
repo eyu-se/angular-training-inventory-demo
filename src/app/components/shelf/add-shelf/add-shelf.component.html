@@ -1,1 +1,17 @@
-<p>add-shelf works!</p>
+<div class="container">
+    <h3>Add shelf</h3>
+    <form (ngSubmit)="addshelf()">
+      <div class="form-group">
+        <label for="name">Shelf Name</label>
+        <input type="text" class="form-control" id="name" [(ngModel)]="shelf.name" name="name" required />
+      </div>
+      <div class="form-group">
+        <label for="location">Warehouse Id</label>
+        <input type="text" class="form-control" id="warehouseId" [(ngModel)]="shelf.warehouseId" name="warehouseId" required />
+      </div>
+      <button type="submit" class="btn btn-primary">Add</button>
+      <button class="btn btn-primary tn-sm" [routerLink]="['/shelf/list']">Back</button>
+
+    </form>
+  </div>
+  
